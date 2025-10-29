@@ -1400,9 +1400,38 @@ todo-frontend/
 ## ส่วนที่ 15: คำถามท้ายการทดลอง
 
 1. **CI/CD Pipeline**: อธิบายขั้นตอนใน GitHub Actions workflow
+- CI/CD (Continuous Integration / Continuous Deployment) เป็นกระบวนการอัตโนมัติที่ช่วยให้เราทดสอบและ deploy โค้ดได้ง่ายและปลอดภัย
+  1.1 Trigger / Event
+    - Workflow จะเริ่มทำงานเมื่อเกิดเหตุการณ์บางอย่าง เช่น push หรือ pull_request
+    - ตัวอย่าง: เมื่อ push เข้า branch main ให้ workflow ทำงาน
+  1.2 Checkout Code
+    - ใช้ action actions/checkout@v3 เพื่อดึงโค้ดจาก repository มาที่ runner
+    - ทำให้ขั้นตอนถัดไปสามารถเข้าถึงไฟล์โค้ดได้
+  1.3 Setup Environment / Dependencies
+    - ติดตั้ง dependencies ที่จำเป็น เช่น Node.js, Python หรือ Docker
+    - ตัวอย่าง: actions/setup-node@v3 เพื่อติดตั้ง Node.js และ npm
+  1.4 Install Packages
+    - ติดตั้ง dependencies ของโปรเจกต์ เช่น npm install หรือ pip install -r requirements.txt
+  1.5 Run Tests (CI)
+    - รัน unit test หรือ integration test เพื่อเช็คว่าโค้ดยังทำงานถูกต้อง
+    - ตัวอย่าง: npm test
+  1.6 Build (Optional)
+    - Build แอปพลิเคชัน เช่น npm run build สำหรับ Next.js หรือ React
+  1.7 Deploy (CD)
+    - ส่งโค้ดขึ้น server หรือ hosting เช่น Vercel, Netlify, AWS
+    - ตัวอย่าง: rsync ไปยัง server หรือใช้ vercel-action
 2. **CORS**: ทำไม Backend ต้อง enable CORS สำหรับ Frontend
-
-
+  - คือมาตรการความปลอดภัยของเบราว์เซอร์ ที่จำกัดการเรียก API ข้าม domain
+  - ปัญหา
+      ถ้า Frontend อยู่บน http://localhost:3000 และ Backend อยู่บน http://localhost:5000
+      เบราว์เซอร์จะบล็อก request เพราะเป็น cross-origin
+  - การแก้ไข:
+      Backend ต้องส่ง header Access-Control-Allow-Origin ให้เบราว์เซอร์อนุญาต
+  - สรุปเหตุผล:
+     - เพื่อให้ Frontend สามารถดึงข้อมูลจาก Backend ได้
+     - ป้องกัน error แบบ CORS policy blocked
+     - ทำให้สามารถพัฒนาและ deploy แอปแบบแยก frontend/backend ได้
+    
 ## ส่วนที่ 16: แหล่งข้อมูลเพิ่มเติม
 
 ### Documentation

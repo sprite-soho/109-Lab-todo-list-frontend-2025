@@ -1023,9 +1023,9 @@ git push origin main
 รอให้ Backend redeploy บน Render (ประมาณ 3-5 นาที)
 
 <img width="1919" height="994" alt="image" src="https://github.com/user-attachments/assets/2b383806-7e27-447d-85b4-b8236e775bf7" />
-```bash
+
 Error ผมไม่สามารถ deploy rander ได้ผมไม่ทราบสาเหตุ 
-```
+
 ---
 
 ## ส่วนที่ 8: ทดสอบ Local

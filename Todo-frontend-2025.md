@@ -1382,12 +1382,12 @@ todo-frontend/
 - [✓] สร้าง GitHub repository
 - [✓] สร้าง workflow file
 - [✓] ตั้งค่า GitHub Pages
-- [ ] ตั้งค่า workflow permissions
-- [ ] อัพเดท API URL ใน workflow
-- [ ] Push code ไป GitHub
-- [ ] Workflow รันสำเร็จ
-- [ ] Website เข้าถึงได้
-- [ ] ทดสอบ features ครบ
+- [❌] ตั้งค่า workflow permissions
+- [❌] อัพเดท API URL ใน workflow
+- [❌] Push code ไป GitHub
+- [❌] Workflow รันสำเร็จ
+- [❌] Website เข้าถึงได้
+- [❌] ทดสอบ features ครบ
 
 ### Testing Checklist
 
